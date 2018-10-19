@@ -11,7 +11,7 @@ if (Meteor.isServer) {
     rootURL: process.env.OPTIONS_METEOR_ROOTURL || "http://localhost",
     port: process.env.OPTIONS_METEOR_PORT || "80",
     rootAPI: process.env.OPTIONS_METEOR_ROOTAPI || "http://rest:8081",
-    kibanaURL: process.env.OPTIONS_METEOR_KIBANAURL || "http://localhost:9090/app/kibana#",
+    kibanaPort: process.env.OPTIONS_KIBANA_ACCESSPROXY_PORT || "9090",
     enableBlockIP: process.env.OPTIONS_METEOR_ENABLEBLOCKIP || true,
     enableClientAccountCreation: process.env.OPTIONS_METEOR_ENABLECLIENTACCOUNTCREATION || true,
     authenticationType: process.env.OPTIONS_METEOR_AUTHENTICATIONTYPE || "meteor-password"

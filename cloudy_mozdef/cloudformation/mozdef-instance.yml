@@ -44,15 +44,15 @@ Parameters:
     Default: "arn:aws:acm:us-west-2:656532927350:certificate/79f641f2-4046-4754-a28f-4db80d7c0583"
   ESURL:
     Type: "String"
-    Description: "The AWS ES endpoint URL"
+    Description: "The AWS ES INTERNAL (unreachable) endpoint URL"
     Default: http://elasticsearch.example.com/
   KibanaURL:
     Type: "String"
-    Description: "The AWS ES Kibana complete URL"
+    Description: "The AWS ES Kibana complete INTERNAL (unreachable) URL"
     Default: https://kibana.example.com/_plugin/kibana
   KibanaDomainOnlyURL:
     Type: "String"
-    Description: "The AWS ES Kibana URL with domain only"
+    Description: "The AWS ES Kibana URL with INTERNAL (unreachable) domain only"
     Default: https://kibana.example.com/
   OIDCClientId:
     Description: "The client ID that your OIDC provider issues you for your Mozdef instance."
@@ -114,6 +114,7 @@ Resources:
             - content: |
                 OPTIONS_ESSERVERS=${ESURL}
                 OPTIONS_KIBANAURL=${KibanaURL}
+                OPTIONS_KIBANA_ACCESSPROXY_PORT=9090
                 # See https://github.com/mozilla-iam/mozilla.oidc.accessproxy/blob/master/README.md#setup
                 client_id=${OIDCClientId}
                 client_secret=${OIDCClientSecret}

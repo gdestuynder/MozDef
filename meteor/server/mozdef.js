@@ -36,8 +36,12 @@ if (Meteor.isServer) {
             value: mozdef.rootAPI
         });
         mozdefsettings.insert({
-            key: 'kibanaURL',
-            value: mozdef.kibanaURL
+            key: 'kibanaPort',
+            value: mozdef.kibanaPort
+        });
+        mozdefsettings.insert({
+            key: 'kibanaUrl',
+            value: mozdef.rootURL + ':' + mozdef.kibanaPort
         });
         mozdefsettings.insert({
             key: 'enableBlockIP',
